@@ -1,0 +1,28 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	background-color: #212121;
+}
+
+@font-face{
+	font-family: ds-digital;
+	src: url('./font/font-clock.ttf');
+}
+
+.clock-container{
+	font-size: 4em;
+	text-align: center;
+	margin: auto 0;
+	padding: 20px;
+	color: #fff;
+	font-family: DS-DIGITAL;
+	background-color: #F6F8FA;
+	border: 15px solid #171815;
+	width: 300px;
+}
+
+.clock-container span{
+	color: #111516;
+}
