@@ -1,20 +1,20 @@
 const clockContainer = document.querySelector('.clock-container')
 
+const formatTime = time => `${String(time).length === 1 ? `0${time} :` : `${time} :`}`
+const formatSecond = time => `${String(time).length === 1 ? `0${time}` : `${time}`}`
+
 const updateClock = () => {
 	const present = new Date();
-	const hours = present.getHours();
-	const minutes = present.getMinutes();
-	const seconds = present.getSeconds();
+	const hours = formatTime(present.getHours());
+	const minutes = formatTime(present.getMinutes());
+	const seconds = formatSecond(present.getSeconds());
 
-	const clockHTML = `
+	clockContainer.innerHTML = `
 	<div class="back-clock">
-		<span>${String(hours).length === 1 ? `0${hours} :` : `${hours} :`}</span>
-		<span>${String(minutes).length === 1 ? `0${minutes} :` : `${minutes} :`}</span>
-		<span>${String(seconds).length === 1 ? `0${seconds}` : `${seconds}`}</span>
-	</div>
-	`;
-
-	clockContainer.innerHTML = clockHTML;
+		<span>${hours}</span>
+		<span>${minutes}</span>
+		<span>${seconds}</span>
+	</div>`;
 }
 
 setInterval(updateClock, 1000);
